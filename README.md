@@ -1,4 +1,4 @@
-# Deploying-wordpress
+# Deploying-wordpress on AWS with RDS using terraform and Docker
 This project aims to deploy a WordPress website using Terraform for infrastructure provisioning, Docker for containerization, and AWS services for hosting. The steps involved in setting up the project are outlined below.
 
 # Terraform Configuration

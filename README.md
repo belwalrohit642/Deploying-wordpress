@@ -13,14 +13,22 @@ Include the WordPress installation steps within the Dockerfile. Download the Wor
 
 Build the Docker image using the docker build command and tag it with a name. 
 
+--> docker build -t belwalrohit642/php-image:v2 .
+
 Push the Docker image to Docker Hub or any other container registry using the docker push command. Ensure you have proper credentials and permissions to access the container registry.
+ 
+--> docker push belwalrohit642/php-image:v2
 
 # Deploying the Docker Container
 Launch an EC2 instance in the public subnet created earlier using Terraform. This instance will be used to run the WordPress container.
 
 SSH into the EC2 instance and pull the Docker image from Docker Hub using the docker pull command. Retrieve the image you pushed in the previous step.
 
+-->docker pull belwalrohit642/php-image:tagname
+
 Run the Docker container on the EC2 instance using the docker run command, specifying the necessary configuration options such as port mappings and environment variables. Ensure the container is running and accessible.
+
+--> docker run -d -p 32768:80 belwalrohit642/php-image:v2
 
 # Configuring AWS RDS
 Manually create an AWS RDS (Relational Database Service) instance in a private subnet within the same VPC created earlier. This RDS instance will be used as the database for the WordPress website.
